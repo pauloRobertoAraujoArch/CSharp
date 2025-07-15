@@ -1,0 +1,40 @@
+
+@startuml C4_Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+
+' Força atores em cima e sistemas embaixo usando boundary e relações verticais
+LAYOUT_TOP_DOWN()
+
+skinparam linetype ortho
+Boundary(Actors, "Atores") {
+  Person(arch, "Arquiteto", "Responsável pela visão técnica e condução das revisões")
+  Person(chapter, "Chapter Lead", "Liderança técnica transversal")
+  Person(dev, "Dev Team", "Equipe de desenvolvimento responsável pelas entregas e revisões")
+  Person(po, "Product Owner", "Responsável pelo contexto de produto")
+}
+
+System_Boundary(s1, "") {
+    System_Ext(hc, "Architecture Health Check", "Revisão técnica periódica da solução")
+    System_Ext(ir, "Iteration Review", "Avaliação ao final de cada sprint/entrega")
+    System_Ext(rfc, "RFC / Design Discussion", "Discussão e formalização de decisões técnicas")
+    System_Ext(sync, "Architecture Sync", "Alinhamento técnico entre arquitetos")
+    System_Ext(runway, "Architecture Runway", "Planejamento técnico futuro")
+    System_Ext(score, "Scorecard Review", "Avaliação consolidada da saúde técnica")
+}
+
+Rel(arch, hc, "Conduz revisão técnica")
+Rel(dev, ir, "Participa do encerramento do sprint")
+Rel(ir, rfc, "Gera RFC quando necessário")
+Rel(ir, sync, "Alinha diretamente se não há RFC")
+Rel(arch, ir, "Avalia impactos técnicos")
+Rel(rfc, sync, "Submete proposta técnica")
+Rel(sync, runway, "Alinha visão evolutiva")
+Rel(po, runway, "Contribui com contexto de produto")
+Rel(runway, score, "Atualiza planejamento técnico")
+Rel(arch, score, "Consolida avaliação")
+Rel(chapter, score, "Valida com visão transversal")
+' Força atores em cima e sistemas embaixo usando Rel_D (Down)
+
+
+@enduml

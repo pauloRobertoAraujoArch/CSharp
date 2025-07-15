@@ -1,0 +1,98 @@
+@startuml
+' Diagrama de Sequência - Acompanhamento Contínuo da Arquitetura
+
+skinparam sequenceMessageAlign left
+skinparam participantPadding 20
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam actor {
+    BackgroundColor #222222
+    BorderColor #111111
+    FontColor #000000
+}
+skinparam participant {
+    BackgroundColor #E3F2FD
+    BorderColor #1976D2
+    FontColor #0D47A1
+}
+
+actor Arquiteto
+actor "Dev Team" as Dev
+actor "Chapter Lead" as Chapter
+actor "Product Owner" as PO
+
+note left of Arquiteto
+  Responsável pela visão técnica e condução das revisões
+end note
+note left of Dev
+  Equipe de desenvolvimento, executa entregas e participa das revisões
+end note
+note left of Chapter
+  Liderança técnica transversal
+end note
+note left of PO
+  Responsável pelo contexto de produto
+end note
+
+participant "Architecture Health Check" as HC
+participant "Iteration Review" as IR
+participant "RFC / Design Discussion" as RFC
+participant "Architecture Sync" as Sync
+participant "Architecture Runway" as Runway
+participant "Scorecard Review" as Score
+
+== Início do Ciclo ==
+
+note over Arquiteto,Score
+  Este diagrama ilustra o ciclo completo de acompanhamento arquitetural,
+  destacando revisões técnicas, decisões colaborativas e avaliação final.
+end note
+
+
+activate HC
+Arquiteto -> HC : Conduz revisão técnica
+note right of HC: Revisão técnica periódica
+HC --> Score : Fornece insumos para avaliação
+deactivate HC
+
+
+activate IR
+Dev -> IR : Participa do encerramento do sprint
+alt RFC necessário?
+    IR -> RFC : Gera RFC
+else Sem RFC
+    IR -> Sync : Alinha diretamente
+end
+Arquiteto -> IR : Avalia impactos técnicos
+deactivate IR
+
+
+activate RFC
+RFC -> Sync : Submete proposta técnica
+deactivate RFC
+activate Sync
+Sync -> Runway : Alinha visão evolutiva
+deactivate Sync
+
+
+activate Runway
+PO -> Runway : Contribui com contexto de produto
+Runway -> Score : Atualiza planejamento técnico
+note right of Runway: Planejamento técnico futuro
+deactivate Runway
+
+
+Arquiteto -> Score : Consolida avaliação
+Chapter -> Score : Valida com visão transversal
+note over Score
+  Resultado: Avaliação consolidada e próximos passos definidos.
+end note
+
+== Fim do Ciclo ==
+
+deactivate HC
+deactivate IR
+deactivate RFC
+deactivate Sync
+deactivate Runway
+@enduml

@@ -1,0 +1,32 @@
+@startuml C4_Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+
+' Pessoas (organizadas verticalmente)
+LAYOUT_TOP_DOWN()
+Person(arch, "Arquiteto", "Responsável pela visão técnica e condução das revisões")
+Person(chapter, "Chapter Lead", "Liderança técnica transversal")
+Person(dev, "Dev Team", "Equipe de desenvolvimento responsável pelas entregas e revisões")
+Person(po, "Product Owner", "Responsável pelo contexto de produto")
+
+' Sistema principal
+System_Boundary(s1, "Acompanhamento Contínuo da Arquitetura") {
+    Container(app, "Portal de Arquitetura", "Web Application", "Interface para acompanhamento, revisão e registro de decisões arquiteturais")
+    Container(api, "API de Governança", "REST API", "Expõe endpoints para integração com ferramentas de documentação e automação de processos arquiteturais")
+    Container(db, "Banco de Decisões Arquiteturais", "Database", "Armazena ADRs, RFCs, scorecards e histórico de revisões")
+    Container(notif, "Serviço de Notificações", "Service", "Envia alertas e lembretes sobre revisões e ações pendentes")
+}
+
+' Relacionamentos
+arch -> app : "Acompanha e conduz revisões"
+dev -> app : "Consulta e registra entregas/revisões"
+chapter -> app : "Valida decisões transversais"
+po -> app : "Consulta contexto de produto e riscos"
+app -> api : "Consome dados e integrações"
+api -> db : "Lê/Escreve decisões e histórico"
+app -> notif : "Solicita envio de notificações"
+notif -> dev : "Notifica sobre revisões e pendências"
+notif -> arch : "Notifica sobre revisões e pendências"
+notif -> chapter : "Notifica sobre revisões e pendências"
+
+@enduml
