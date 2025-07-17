@@ -1,5 +1,5 @@
 @startuml maturidade
-!theme aws-orange
+!theme cerulean
 title Evolução da Maturidade Arquitetural
 skinparam backgroundColor #f8f9fa
 

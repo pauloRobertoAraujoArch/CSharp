@@ -658,7 +658,7 @@ A abordagem em **fases sequenciais com validação** permite que a organização
 
 **Pontos-chave do fluxo**: Validação por dados, progressão condicionada a critérios objetivos, loops de melhoria contínua e escalabilidade controlada.
 
-![Fluxo Arquitetura](fluxo_transformação.png)
+![Fluxo Arquitetura](fluxo_transformação_2.png)
 
 ### 📈 Fluxo de Evolução da Maturidade Arquitetural
 
@@ -670,4 +670,4 @@ Diferentemente de uma transformação disruptiva, este fluxo enfatiza a **evolu�
 
 **Elementos-chave**: Progressão orgânica, marcos de validação intermediários, feedback contínuo entre níveis de maturidade, e escalabilidade respeitosa ao contexto organizacional.
 
-![Fluxo Arquitetura](fluxo_evolucao.png)
+![Fluxo Arquitetura](fluxo_evolucao_2.png)

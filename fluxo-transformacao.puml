@@ -1,5 +1,5 @@
 @startuml transformacao
-!theme aws-orange
+!theme cerulean
 title Fluxo de Transformação Arquitetural
 skinparam backgroundColor #f8f9fa
 skinparam activity {
