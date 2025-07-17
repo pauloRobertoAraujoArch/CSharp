@@ -1,0 +1,54 @@
+@startuml maturidade
+!theme aws-orange
+title Evolução da Maturidade Arquitetural
+skinparam backgroundColor #f8f9fa
+
+package "Nível 1: CAÓTICO" #ffebee {
+  [Decisões Isoladas] as isoladas
+  [Sem Documentação] as doc0
+  [Reatividade Total] as reativo
+}
+
+package "Nível 2: REATIVO (3m)" #fff3e0 {
+  [Iteration Review] as iter
+  [Templates ADR] as adr
+  [Processos Inconsistentes] as proc1
+}
+
+package "Nível 3: DEFINIDO (6m)" #f3e5f5 {
+  [Health Check] as health
+  [Architecture Sync] as sync
+  [Métricas Básicas] as metricas
+}
+
+package "Nível 4: GERENCIADO (9m)" #e8f5e8 {
+  [Scorecard Review] as score
+  [Architecture Runway] as runway
+  [Governança Ativa] as gov
+}
+
+package "Nível 5: OTIMIZADO (12m)" #e3f2fd {
+  [Automação] as auto
+  [Cultura Consolidada] as cultura
+  [Melhoria Contínua] as melhoria
+}
+
+isoladas --> iter : "Estruturação"
+doc0 --> adr : "Documentação"
+reativo --> health : "Proatividade"
+
+iter --> sync : "Coordenação"
+adr --> score : "Mensuração"
+proc1 --> runway : "Planejamento"
+
+health --> auto : "Eficiência"
+sync --> cultura : "Adoção"
+metricas --> melhoria : "Evolução"
+
+note top of isoladas : IMA: 1.6/5.0
+note top of iter : IMA: 2.4/5.0
+note top of health : IMA: 3.2/5.0
+note top of score : IMA: 4.1/5.0
+note top of auto : IMA: 4.6/5.0
+
+@enduml

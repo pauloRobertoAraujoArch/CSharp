@@ -1,0 +1,32 @@
+@startgantt
+!theme aws-orange
+title Timeline de Evolução da Maturidade Arquitetural
+caption XP Inc - Transformação Digital 2025
+
+project starts 2025-01-01
+
+-- FASE 1: PILOTO --
+[Setup Squads Piloto] starts 2025-01-01 and lasts 2 weeks
+[Iteration Review] starts 2025-01-15 and lasts 6 weeks
+[Templates ADR/RFC] starts 2025-01-15 and lasts 4 weeks
+[Architecture Sync] starts 2025-02-01 and lasts 8 weeks
+
+-- FASE 2: EXPANSÃO --
+[Rollout Tribo Completa] starts 2025-04-01 and lasts 3 weeks
+[Health Check Operacional] starts 2025-04-15 and lasts 8 weeks
+[Dashboard Métricas] starts 2025-05-01 and lasts 6 weeks
+[RFC Process Maduro] starts 2025-04-01 and lasts 12 weeks
+
+-- FASE 3: CONSOLIDAÇÃO --
+[Scorecard Review] starts 2025-07-01 and lasts 8 weeks
+[Architecture Runway] starts 2025-07-15 and lasts 10 weeks
+[Expansão Multi-tribos] starts 2025-08-01 and lasts 8 weeks
+[Governança Corporativa] starts 2025-08-15 and lasts 6 weeks
+
+-- FASE 4: OTIMIZAÇÃO --
+[Automação Coleta] starts 2025-10-01 and lasts 8 weeks
+[IA para Insights] starts 2025-10-15 and lasts 10 weeks
+[Cultura Consolidada] starts 2025-11-01 and lasts 8 weeks
+[Melhoria Contínua] starts 2025-11-15 and lasts 6 weeks
+
+@endgantt

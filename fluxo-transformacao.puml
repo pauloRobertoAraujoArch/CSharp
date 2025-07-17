@@ -1,0 +1,63 @@
+@startuml transformacao
+!theme aws-orange
+title Fluxo de Transformação Arquitetural
+skinparam backgroundColor #f8f9fa
+skinparam activity {
+  BackgroundColor #e3f2fd
+  BorderColor #1976d2
+  FontColor #0d47a1
+}
+
+start
+
+partition "FASE 1: PILOTO (Q1)" {
+  :Selecionar 2 Squads;
+  :Implementar Iteration Review;
+  :Criar Templates ADR/RFC;
+  :Estabelecer Architecture Sync;
+  
+  if (Sucesso Piloto?) then (sim)
+    :Documentar Lições Aprendidas;
+  else (não)
+    :Ajustar Processos;
+    stop
+  endif
+}
+
+partition "FASE 2: EXPANSÃO (Q2)" {
+  :Rollout Tribo Completa;
+  :Ativar Health Check;
+  :Implementar Dashboard;
+  :Madurecer RFC Process;
+  
+  if (Adesão >85%?) then (sim)
+    :Preparar Expansão;
+  else (não)
+    :Reforçar Treinamento;
+  endif
+}
+
+partition "FASE 3: CONSOLIDAÇÃO (Q3)" {
+  :Ativar Scorecard Review;
+  :Implementar Architecture Runway;
+  :Expandir Multi-tribos;
+  :Estabelecer Governança;
+  
+  if (IMA >4.0?) then (sim)
+    :Preparar Otimização;
+  else (não)
+    :Consolidar Processos;
+  endif
+}
+
+partition "FASE 4: OTIMIZAÇÃO (Q4)" {
+  :Automatizar Coleta;
+  :Implementar IA Insights;
+  :Consolidar Cultura;
+  :Estabelecer Melhoria Contínua;
+}
+
+:Arquitetura Madura;
+stop
+
+@enduml
